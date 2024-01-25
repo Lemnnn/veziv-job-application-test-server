@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const multer = require("multer");
-const path = require("path");
 const cors = require("cors");
 const app = express();
-const dotenv = require("dotenv").config();
+const port = process.env.PORT;
+require("dotenv").config();
 
 const WorkModel = require("./models/Work");
 
@@ -119,6 +119,6 @@ app.post("/uploadImage", upload.single("image"), async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
   console.log("Server running on port 3001");
 });
