@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/images", express.static(`${__dirname}/images`));
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.mongourl);
 
 app.post("/create", async (req, res) => {
   const { image, title, link, description } = req.body;
